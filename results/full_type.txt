@@ -1,0 +1,58 @@
+Estimand type: EstimandType.NONPARAMETRIC_ATE
+
+### Estimand : 1
+Estimand name: backdoor
+Estimand expression:
+     d              
+────────────(E[co₂])
+d[fuel_type]        
+Estimand assumption 1, Unconfoundedness: If U→{fuel_type} and U→co2 then P(co2|fuel_type,,U) = P(co2|fuel_type,)
+
+### Estimand : 2
+Estimand name: iv
+No such variable(s) found!
+
+### Estimand : 3
+Estimand name: frontdoor
+No such variable(s) found!
+
+****************************************************
+*** Causal Estimate ***
+
+## Identified estimand
+Estimand type: EstimandType.NONPARAMETRIC_ATE
+
+### Estimand : 1
+Estimand name: backdoor
+Estimand expression:
+     d              
+────────────(E[co₂])
+d[fuel_type]        
+Estimand assumption 1, Unconfoundedness: If U→{fuel_type} and U→co2 then P(co2|fuel_type,,U) = P(co2|fuel_type,)
+
+## Realized estimand
+b: co2~fuel_type
+Target units: ate
+
+## Estimate
+Mean value: -0.8779718137758152
+p-value: [0.]
+
+Causal Estimate is -0.8779718137758152
+****************************************************
+Refute: Add a random common cause
+Estimated effect:-0.8779718137758152
+New effect:-0.8779719458297618
+p value:0.84
+
+****************************************************
+Refute: Use a Placebo Treatment
+Estimated effect:-0.8779718137758152
+New effect:0.0
+p value:1.0
+
+****************************************************
+Refute: Use a subset of data
+Estimated effect:-0.8779718137758152
+New effect:-0.879046139903918
+p value:0.84

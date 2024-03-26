@@ -1,0 +1,58 @@
+Estimand type: EstimandType.NONPARAMETRIC_ATE
+
+### Estimand : 1
+Estimand name: backdoor
+Estimand expression:
+       d                         
+───────────────(E[co2|fuel_type])
+d[engine_power]                  
+Estimand assumption 1, Unconfoundedness: If U→{engine_power} and U→co2 then P(co2|engine_power,fuel_type,U) = P(co2|engine_power,fuel_type)
+
+### Estimand : 2
+Estimand name: iv
+No such variable(s) found!
+
+### Estimand : 3
+Estimand name: frontdoor
+No such variable(s) found!
+
+****************************************************
+*** Causal Estimate ***
+
+## Identified estimand
+Estimand type: EstimandType.NONPARAMETRIC_ATE
+
+### Estimand : 1
+Estimand name: backdoor
+Estimand expression:
+       d                         
+───────────────(E[co2|fuel_type])
+d[engine_power]                  
+Estimand assumption 1, Unconfoundedness: If U→{engine_power} and U→co2 then P(co2|engine_power,fuel_type,U) = P(co2|engine_power,fuel_type)
+
+## Realized estimand
+b: co2~engine_power+fuel_type+engine_power*engine_capacity+engine_power*mass
+Target units: ate
+
+## Estimate
+Mean value: 0.33903264693533686
+p-value: [0.]
+
+Causal Estimate is 0.33903264693533686
+****************************************************
+Refute: Add a random common cause
+Estimated effect:0.33903264693533686
+New effect:0.33903266630566337
+p value:0.96
+
+****************************************************
+Refute: Use a Placebo Treatment
+Estimated effect:0.33903264693533686
+New effect:0.0
+p value:1.0
+
+****************************************************
+Refute: Use a subset of data
+Estimated effect:0.33903264693533686
+New effect:0.33905395316392
+p value:0.96

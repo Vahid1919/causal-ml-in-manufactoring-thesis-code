@@ -1,0 +1,37 @@
+Estimand type: EstimandType.NONPARAMETRIC_ATE
+
+### Estimand : 1
+Estimand name: backdoor
+Estimand expression:
+   d           
+───────(E[co₂])
+d[mass]        
+Estimand assumption 1, Unconfoundedness: If U→{mass} and U→co2 then P(co2|mass,,U) = P(co2|mass,)
+
+## Realized estimand
+b: co2~mass+mass*fuel_type
+Target units: ate
+
+## Estimate
+Mean value: 0.13800267190663362
+p-value: [0.]
+
+Causal Estimate is 0.13800267190663362
+****************************************************
+Refute: Add a random common cause
+Estimated effect:0.13800267190663362
+New effect:0.13800462453294243
+p value:0.96
+
+****************************************************
+
+Refute: Use a Placebo Treatment
+Estimated effect:0.13800267190663362
+New effect:0.0
+p value:1.0
+
+****************************************************
+Refute: Use a subset of data
+Estimated effect:0.13800267190663362
+New effect:0.13805357393283885
+p value:0.94
